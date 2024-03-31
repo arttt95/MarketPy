@@ -1,2 +1,10 @@
 def formata_float_str_moeda(valor: float) -> str:
-    return f'R$ {valor:,.2f}'
+    valor = f'R$ {valor:_}'
+    valor = valor.replace('.', ',')
+    valor = valor.replace('_', '.')
+    return valor
+
+
+def formata_str_float_moeda(valor: str) -> float:
+    valor = valor.replace(',', '.')
+    return float(valor)
